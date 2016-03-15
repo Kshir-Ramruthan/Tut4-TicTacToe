@@ -9,6 +9,6 @@ public:
 	void reset();
 	bool move(int row,int col,int play);
 	void print();
-	void over();
+	string over();
 };
 
