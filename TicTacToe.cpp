@@ -36,17 +36,19 @@ bool TicTacToe::move(int row,int col,int play)
 
 void TicTacToe::print()
 {
+	cout << endl << " -----"<<endl;
 	for (int i = 0; i < 3; i++)
 	{
+		cout << "|";
 		for (int j = 0; j < 3; j++)
 		{
 			cout<<game[i][j]<<"|";
 		}//End
-		cout << endl <<"______"<< endl ;
+		cout << endl <<" -----"<< endl ;
 	}//End
 }
 
-string TicTacToe::over()
+int TicTacToe::over()
 {
 	int c1=0, c2=0;
 	for (int i = 0; i < 3; i++)
@@ -58,7 +60,7 @@ string TicTacToe::over()
 				c2 = 0;
 				c1++;
 				if (c1 == 3)
-					return "Player 1";
+					return 1;
 			}
 
 			else if (game[i][j] == 2)
@@ -66,12 +68,12 @@ string TicTacToe::over()
 				c1 = 0;
 				c2++;
 				if (c2 == 3)
-					return "Player 2";
+					return 2;
 			}
 
 			else
 			{
-				return "draw";
+				return 0;
 			}
 		}//End
 	}//End
